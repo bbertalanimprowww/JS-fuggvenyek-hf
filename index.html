@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kökény Dániel JS megoldások</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <h1 class="text-3xl font-bold text-center">Kökény Dániel megoldások</h1>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Bruttó kalkulátor</p>
+        <button onclick="bruttoKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Számol
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Prímszám vizsgálat</p>
+        <button onclick="PrimKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Vizsgálat
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Palindrome?</p>
+        <input type="text" name="szoveg" id="szoveg" class="m-2 border">
+        <button onclick="palindromeKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 block mx-auto">
+            Ellenőriz
+        </button>
+        <p id="result"></p>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Jelszó generálása (eredmény a console-n)</p>
+        <button onclick="jelszoKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Generál
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Osztás vizsgálata</p>
+        <button onclick="osztoKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Viszgálat
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Heti ötöslottószámok</p>
+        <button onclick="otoslottoGeneral()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Mutasd!
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Éves hatoslottószámok</p>
+        <button onclick="hatoslottoKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Mutasd
+        </button>
+        <p id="hatoslottoResult"></p>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Magánhangzó számolás</p>
+        <input type="text" name="szoveg2" id="szoveg2" class="border m-2">
+        <button onclick="maganhangzoKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 block mx-auto">
+            Számol
+        </button>
+        <p id="result2"></p>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5">Pitagorasz tétel</p>
+        <button onclick="pitagoraszKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700">
+            Számol
+        </button>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5 m-2">Útiköltség kalkulátor</p>
+        <label for="fogyasztas">Fogyasztás</label>
+        <input type="number" name="fogyasztas" id="fogyasztas" class="border w-20">
+        <label for="benzinAr">Benzinár</label>
+        <input type="number" name="benzinAr" id="benzinAr" class="border w-20">
+        <label for="utHossz">Úthossz</label>
+        <input type="number" name="utHossz" id="utHossz" class="border w-20">
+        <button onclick="utikoltsegKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 block mx-auto m-3">
+            Számol
+        </button>
+        <p id="result3"></p>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5 m-2">Euró átváltása</p>
+        <label for="arfolyam">Árfolyam</label>
+        <input type="number" name="arfolyam" id="arfolyam" class="border w-20">
+        <label for="euro">Hány eurót váltanál?</label>
+        <input type="number" name="euro" id="euro" class="border w-20">
+        <button onclick="euroKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 block mx-auto mt-3">
+            Számol
+        </button>
+        <p id="result4"></p>
+    </div>
+    <div class="text-center mb-3">
+        <p class="font-bold mt-5 m-2">Kocka felszín, térfogat számítás</p>
+        <label for="aOldal">Add meg a kocka "a" oldalát</label>
+        <input type="number" name="aOldal" id="aOldal" class="border w-20">
+        <button onclick="kockaTerfogatFelszinKiir()"
+            class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 block mx-auto m-3">
+            12. feladat
+        </button>
+        <p id="result5"></p>
+    </div>
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
